@@ -3,8 +3,8 @@ import json
 from datetime import datetime
 
 # File input and output names
-INPUT_FILE = 'starfield_reviews.json'
-OUTPUT_FILE = 'cleaned_starfield_reviews.json'
+INPUT_FILE = 'reviews.json'
+OUTPUT_FILE = 'cleaned_reviews.json'
 
 with open(INPUT_FILE, 'r', encoding='utf-8') as file:
     reviews_data = json.load(file)
@@ -20,6 +20,8 @@ for review_id, review in reviews.items():
         "author_steamid": review['author']['steamid'],
         "review": review['review'],
         "voted_up": review['voted_up'],
+        "votes_up": review['votes_up'],
+        "votes_funny": review['votes_funny'],
         # Converts the unix time used in the steam database to readable time
         "timestamp_created": datetime.utcfromtimestamp(review['timestamp_created']).strftime('%Y-%m-%d %H:%M:%S')
     }

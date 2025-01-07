@@ -11,7 +11,7 @@ app_id = 1716740
 review_dict, query_count = steamreviews.download_reviews_for_app_id(app_id, chosen_request_params = request_params)
 
 # Define the name of the output file
-output_file = 'starfield_reviews.json'
+output_file = 'reviews.json'
 
 with open(output_file, 'w', encoding='utf-8') as json_file:
     json.dump(review_dict, json_file, ensure_ascii=False, indent=4)

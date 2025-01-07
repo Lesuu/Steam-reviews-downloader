@@ -42,6 +42,7 @@
         "author_steamid": "76561197992061034",
         "review": "There are parts of the writing or lack of consequences, BUT by and large, this game is fantastic fun for hours and hours of distraction.",
         "voted_up": true,
+        "votes_up": 0,
         "timestamp_created": "2025-01-05 18:32:15"
     },
  ```

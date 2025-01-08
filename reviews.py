@@ -1,10 +1,11 @@
 '''Pulls reviews from Steam in the specified language'''
-import steamreviews
 import json
+import steamreviews
 
 # Change the parameters (for a full list of parameters, check the original code)
 request_params = dict()
 request_params['language'] = 'english'
+request_params['voted_up'] = 'false' # If the review was recommended or not. Delete this line to get all reviews.
 
 # Define the app ID of the desired game (default: Starfield)
 app_id = 1716740

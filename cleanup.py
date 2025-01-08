@@ -13,10 +13,11 @@ reviews = reviews_data.get("reviews", {})
 
 review_count = len(reviews)
 
-cleaned_reviews = dict()
+cleaned_reviews = list()
 
 for review_id, review in reviews.items():
     cleaned_review = {
+        "review_id": review_id,
         "author_steamid": review['author']['steamid'],
         "review": review['review'],
         "voted_up": review['voted_up'],
@@ -30,7 +31,7 @@ for review_id, review in reviews.items():
     if review['timestamp_created'] != review['timestamp_updated']:
         cleaned_review["timestamp_updated"] = datetime.utcfromtimestamp(review['timestamp_updated']).strftime('%Y-%m-%d %H:%M:%S')
 
-    cleaned_reviews[review_id] = cleaned_review
+    cleaned_reviews.append(cleaned_review)
 
 cleaned_data = {"reviews": cleaned_reviews}
 
